@@ -57,12 +57,13 @@ async function showSerieInfo(id) {
     const resp = await fetch("series.json");
     const respData = await resp.json();
     const serieId = respData.filter(serie => serie.id === id)[0];
-    const { nombre, portada, temporadas, dvds, precio, sinopsis, trailer, whatsapp } = serieId;
+    const { nombre, imagen, temporadas, dvds, precio, sinopsis, trailer, whatsapp } = serieId;
     const serieEl = document.createElement('div');
+    serieEl.setAttribute("align", "center");
     serieEl.innerHTML = `
                 <h1>${nombre}</h1>
                 <img
-                src="${portada}"
+                src="${imagen}"
                 alt="${nombre}"
                 />
                 <p><Strong>Sinopsis: </Strong>${sinopsis}</p>

@@ -122,17 +122,19 @@ main {
     width: 100%;
 }
 .popup div img{
-    width:720px;
+    width:300px;
 }
 .serie-info h1{
     text-align: center;
 }
 .popup button{
-    background-color: gray;
-    border: none;
+    color:rgb(70, 50, 50);
+    background-color: rgb(190, 76, 76);
+    border:none;
+    border-radius:50%;
     cursor: pointer;
-    font-size: 1.5rem;
-    position: absolute;
+    font-size: 1.4rem;
+    position: fixed;
     top: 2rem;
     right: 1rem;
 
