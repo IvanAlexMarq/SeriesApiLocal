@@ -131,9 +131,9 @@ main {
     color:rgb(70, 50, 50);
     background-color: rgb(190, 76, 76);
     border:none;
-    border-radius:50%;
+    /* border-radius:100%; */
     cursor: pointer;
-    font-size: 1.8rem;
+    font-size: 3rem;
     position: fixed;
     top: 2rem;
     right: 1rem;
