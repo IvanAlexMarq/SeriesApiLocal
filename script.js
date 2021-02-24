@@ -32,17 +32,18 @@ function showMovies(movies) {
         movieEl.classList.add("movie");
 
         movieEl.innerHTML = `
-            <img
+        <a href="serie.html?id=${id}"><img
                 src="${imagen}"
                 alt="${nombre}"
-                onclick="showSerieInfo(${id})"
+            
             />
+            </a>
             <div class="movie-info">
-                <h3 onclick="showSerieInfo(${id})">${nombre}</h3>
-                <p>Temporadas: ${movie.temporadas}</p>
-                <p>Precio Total: ${movie.dvds}DVDs ${movie.precio}.Bs</p>
-                <p>Whatsapp: <a href="${movie.whatsapp}">Link directo Whatsapp</a></p>
-                <p>Trailer:<a href="${movie.trailer}">Trailer Youtube</a></p>
+                <h3>${nombre}</h3>
+                <p>Temporadas: <span>${movie.temporadas}</span></p>
+                <p>Precio Total: <span>${movie.dvds}DVDs ${movie.precio}.Bs</span></p>
+                <p>Whatsapp <i style="font-size:24px" class="fa">&#xf232;</i>  <a href="${movie.whatsapp}">Link directo Whatsapp</a></p>
+                
             </div>
             
         `;
@@ -50,32 +51,7 @@ function showMovies(movies) {
         main.appendChild(movieEl);
     });
 }
-async function showSerieInfo(id) {
-    //limpiar html
-    serieInfoEl.innerHTML = '';
 
-    const resp = await fetch("series.json");
-    const respData = await resp.json();
-    const serieId = respData.filter(serie => serie.id === id)[0];
-    const { nombre, imagen, temporadas, dvds, precio, sinopsis, trailer, whatsapp } = serieId;
-    const serieEl = document.createElement('div');
-    serieEl.setAttribute("align", "center");
-    serieEl.innerHTML = `
-                <h1>${nombre}</h1>
-                <img
-                src="${imagen}"
-                alt="${nombre}"
-                />
-                <p><Strong>Sinopsis: </Strong>${sinopsis}</p>
-                    <p><Strong>Temporadas: </Strong>${temporadas}</p>
-                    <p><Strong>Precio Total: </Strong>${dvds}DVDs ${precio}.Bs</p>
-                    <p><Strong>Whatsapp: </Strong><a href="${whatsapp}">Link directo Whatsapp</a></p>
-                    <p><Strong>Trailer: </Strong><a href="${trailer}">Trailer Youtube</a></p>
-                
-                `;
-    serieInfoEl.appendChild(serieEl);
-    seriePopup.classList.remove('hidden');
-}
 
 popupCloseBtn.addEventListener('click', () => {
     seriePopup.classList.add('hidden');
