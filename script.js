@@ -43,7 +43,7 @@ function showMovies(movies) {
                 <p>Temporadas: <span>${movie.temporadas}</span></p>
                 <p>Precio Total: <span>${movie.dvds}DVDs ${movie.precio}.Bs</span></p>
                 <p>Whatsapp <i style="font-size:24px" class="fa">&#xf232;</i>  <a href="${movie.whatsapp}">Link directo Whatsapp</a></p>
-                
+                <a href="serie.html?id=${id}"><button>Ver mas +</button></a>
             </div>
             
         `;

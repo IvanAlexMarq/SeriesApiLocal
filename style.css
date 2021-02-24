@@ -59,6 +59,10 @@ main {
 #serie strong{
     color:#373b69;
 }
+button{
+    background-color:rgb(38, 52, 114);
+    border: #373b69da;
+}
 
 .movie-info h3 {
     margin: 0;
